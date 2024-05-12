@@ -5,6 +5,10 @@ from theone.models import LocalStatus, Point
 
 
 def display_point(p: Point):
+    """HTML code to display a point and its status.
+    If Point object has no corresponding LocalStatus object, the attempt raises RelatedObjectDoesNotExist exception.
+    In that case, only the point is displayed.
+    """
     try:
         return f"<p>{p} - {p.localstatus}<p>"
     except Exception:
